@@ -1,13 +1,16 @@
 {
-	"name" : "BraspagApiSdk",
-	"description" : "Braspag API PHP SDK",
+	"name" : "Non official BraspagApiSdk",
+	"description" : "Non official Braspag API PHP SDK",
 	"authors" : [{
 			"name" : "Paulo Fernandes",
 			"email" : "pfernandes@braspag.com.br"
 		}, {
 			"name" : "João Batista Neto",
 			"email" : "neto.joaobatista@gmail.com"
-		}
+		}, {
+                        "name" : "Evandro Ishy Medeiros",
+                        "email": "ishyevandro@gmail.com"
+                }
 	],
 	"autoload" : {
 		"psr-4" : {
@@ -22,6 +25,7 @@
 	"keywords" : [
 		"braspag",
 		"api",
-		"sdk"
+		"sdk",
+                "not_official"
 	]
 }
