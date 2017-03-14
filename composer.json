@@ -1,5 +1,5 @@
 {
-	"name" : "NonOfficialBraspagApiSdk",
+	"name" : "ishyevandro/BraspagNonOfficial",
 	"description" : "Non official Braspag API PHP SDK",
 	"authors" : [{
 			"name" : "Paulo Fernandes",
