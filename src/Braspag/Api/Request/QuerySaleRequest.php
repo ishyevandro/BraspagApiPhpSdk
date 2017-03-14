@@ -3,6 +3,7 @@ namespace BraspagNonOfficial\Api\Request;
 
 use BraspagNonOfficial\Api\Request\AbstractSaleRequest;
 use BraspagNonOfficial\Environment;
+use BraspagNonOfficial\Api\Sale;
 use BraspagNonOfficial\Merchant;
 
 class QuerySaleRequest extends AbstractSaleRequest
