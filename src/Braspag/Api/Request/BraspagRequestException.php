@@ -1,5 +1,5 @@
 <?php
-namespace Braspag\Api\Request;
+namespace BraspagNonOffical\Api\Request;
 
 class BraspagRequestException extends \Exception
 {

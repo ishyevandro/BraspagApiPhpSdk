@@ -1,7 +1,7 @@
 <?php
-namespace Braspag\Api;
+namespace BraspagNonOffical\Api;
 
-use Braspag\Api\BraspagSerializable;
+use BraspagNonOffical\Api\BraspagSerializable;
 
 class Customer implements BraspagSerializable
 {

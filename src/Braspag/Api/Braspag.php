@@ -1,10 +1,10 @@
 <?php
-namespace Braspag\Api;
+namespace BraspagNonOffical\Api;
 
-use Braspag\Merchant;
-use Braspag\Api\Request\CreateSaleRequest;
-use Braspag\Api\Request\QuerySaleRequest;
-use Braspag\Api\Request\UpdateSaleRequest;
+use BraspagNonOffical\Merchant;
+use BraspagNonOffical\Api\Request\CreateSaleRequest;
+use BraspagNonOffical\Api\Request\QuerySaleRequest;
+use BraspagNonOffical\Api\Request\UpdateSaleRequest;
 
 /**
  * The Braspag Ecommerce SDK front-end;

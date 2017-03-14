@@ -1,5 +1,5 @@
 <?php
-namespace Braspag\Api;
+namespace BraspagNonOffical\Api;
 
 /**
  * Representation of customer's address

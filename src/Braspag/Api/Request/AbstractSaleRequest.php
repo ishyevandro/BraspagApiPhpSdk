@@ -1,8 +1,8 @@
 <?php
-namespace Braspag\Api\Request;
+namespace BraspagNonOffical\Api\Request;
 
-use Braspag\Merchant;
-use Braspag\Api\Sale;
+use BraspagNonOffical\Merchant;
+use BraspagNonOffical\Api\Sale;
 
 abstract class AbstractSaleRequest
 {

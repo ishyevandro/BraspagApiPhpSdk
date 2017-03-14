@@ -1,5 +1,5 @@
 <?php
-namespace Braspag;
+namespace BraspagNonOffical;
 
 interface Environment
 {

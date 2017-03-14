@@ -1,7 +1,8 @@
 <?php
-namespace Braspag\Api;
 
-class Environment implements \Braspag\Environment
+namespace BraspagNonOffical\Api;
+
+class Environment implements \BraspagNonOfficial\Environment
 {
 
     private $api;

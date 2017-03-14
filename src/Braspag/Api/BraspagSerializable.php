@@ -1,5 +1,5 @@
 <?php
-namespace Braspag\Api;
+namespace BraspagNonOffical\Api;
 
 interface BraspagSerializable extends \JsonSerializable
 {
