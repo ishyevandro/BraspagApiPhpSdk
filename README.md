@@ -1,6 +1,9 @@
 # Braspag API SDK (NÃO OFICIAL)
 
-Repositório criado para sanar problemas pontuais que levariam algumas semanas para ser aceito o PR.
+Repositório oficial:
+ https://github.com/Braspag/BraspagApiPhpSdk
+ 
+Repositório criado a partir da versão v2.0 para sanar problemas pontuais que levariam algumas semanas para ser aceito o PR.
 
 ## Principais recursos
 
