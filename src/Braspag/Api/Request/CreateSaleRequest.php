@@ -1,10 +1,10 @@
 <?php
-namespace BraspagNonOffical\Api\Request;
+namespace BraspagNonOfficial\Api\Request;
 
-use BraspagNonOffical\Merchant;
-use BraspagNonOffical\Environment;
-use BraspagNonOffical\Api\Request\AbstractSaleRequest;
-use BraspagNonOffical\Api\Sale;
+use BraspagNonOfficial\Merchant;
+use BraspagNonOfficial\Environment;
+use BraspagNonOfficial\Api\Request\AbstractSaleRequest;
+use BraspagNonOfficial\Api\Sale;
 
 class CreateSaleRequest extends AbstractSaleRequest
 {

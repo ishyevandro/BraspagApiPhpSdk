@@ -1,6 +1,6 @@
 <?php
 
-namespace BraspagNonOffical\Api;
+namespace BraspagNonOfficial\Api;
 
 class Environment implements \BraspagNonOfficial\Environment
 {

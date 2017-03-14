@@ -1,7 +1,7 @@
 <?php
-namespace BraspagNonOffical\Api;
+namespace BraspagNonOfficial\Api;
 
-use BraspagNonOffical\Api\BraspagSerializable;
+use BraspagNonOfficial\Api\BraspagSerializable;
 
 class RecurrentPayment implements BraspagSerializable
 {

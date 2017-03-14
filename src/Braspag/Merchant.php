@@ -1,5 +1,5 @@
 <?php
-namespace BraspagNonOffical;
+namespace BraspagNonOfficial;
 
 class Merchant
 {
