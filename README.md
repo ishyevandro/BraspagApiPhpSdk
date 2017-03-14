@@ -1,4 +1,6 @@
-# Braspag API SDK
+# Braspag API SDK (NÃO OFICIAL)
+
+Repositório criado para sanar problemas pontuais que levariam algumas semanas para ser aceito o PR.
 
 ## Principais recursos
 
