@@ -3,7 +3,7 @@ namespace Braspag\Api;
 
 use Braspag\Merchant;
 use Braspag\Api\Request\CreateSaleRequest;
-use Braspag\ApiRequest\QuerySaleRequest;
+use Braspag\Api\Request\QuerySaleRequest;
 use Braspag\Api\Request\UpdateSaleRequest;
 
 /**

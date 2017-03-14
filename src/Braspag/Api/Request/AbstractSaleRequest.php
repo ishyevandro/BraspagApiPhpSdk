@@ -46,9 +46,6 @@ abstract class AbstractSaleRequest
 
         if ($sale !== null) {
             curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($sale));
-
-            var_dump(json_encode($sale));
-
             $headers[] = 'Content-Type: application/json';
         } else {
             $headers[] = 'Content-Length: 0';
