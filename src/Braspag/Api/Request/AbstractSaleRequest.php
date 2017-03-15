@@ -80,18 +80,12 @@ abstract class AbstractSaleRequest
                 $response = json_decode($responseBody);
 
                 if (is_object($response)) {
-                    $code = -1;
-                    if (property_exists($response, "Code")) {
-                        $code = $response->Code;
-                    }
+                    $code = $this->getResponseCode($response);
                     throw new BraspagError($response->Message, $code);
                 }
 
                 foreach ($response as $error) {
-                    $code = -1;
-                    if (property_exists($error, "Code")) {
-                        $code = $error->Code;
-                    }
+                    $code = $this->getResponseCode($response);
                     throw new BraspagError($error->Message, $code);
                 }
             case 404:
@@ -101,5 +95,14 @@ abstract class AbstractSaleRequest
         }
 
         return $unserialized;
+    }
+
+    protected function getResponseCode($response)
+    {
+        $code = -1;
+        if (property_exists($response, "Code")) {
+            $code = $response->Code;
+        }
+        return $code;
     }
 }
