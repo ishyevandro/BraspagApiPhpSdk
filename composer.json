@@ -17,6 +17,9 @@
 			"BraspagNonOfficial\\" : "src/Braspag"
 		}
 	},
+	"autoload-dev": {
+		"files": ["tests/TestBase.php"]
+	},
 	"require" : {
 		"php" : ">=5.6"
 	},
