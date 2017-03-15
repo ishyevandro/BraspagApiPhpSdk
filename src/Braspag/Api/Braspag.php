@@ -42,10 +42,8 @@ class Braspag
      * Send the Sale to be created and return the Sale with payment id and the status
      * returned by Braspag.
      *
-     * @param \Braspag\Api\Sale $sale
-     *            The preconfigured Sale
-     * @return \Braspag\Api\Sale The Sale with authorization, tid, etc. returned by Braspag.
-     * @throws BraspagRequestException if anything gets wrong.
+     * @param Sale $sale
+     * @return Sale
      */
     public function createSale(Sale $sale)
     {
@@ -72,12 +70,9 @@ class Braspag
     /**
      * Cancel a Sale on Braspag by paymentId and speficying the amount
      *
-     * @param string $paymentId
-     *            The paymentId to be queried
-     * @param integer $amount
-     *            Order value in cents
-     * @return \Braspag\Api\Sale The Sale with authorization, tid, etc. returned by Braspag.
-     * @throws BraspagRequestException if anything gets wrong.
+     * @param $paymentId
+     * @param null $amount
+     * @return Payment
      */
     public function cancelSale($paymentId, $amount = null)
     {
