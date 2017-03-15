@@ -85,7 +85,7 @@ abstract class AbstractSaleRequest
                 }
 
                 foreach ($response as $error) {
-                    $code = $this->getResponseCode($response);
+                    $code = $this->getResponseCode($error);
                     throw new BraspagError($error->Message, $code);
                 }
             case 404:
@@ -97,11 +97,11 @@ abstract class AbstractSaleRequest
         return $unserialized;
     }
 
-    protected function getResponseCode($response)
+    protected function getResponseCode($element)
     {
         $code = -1;
-        if (property_exists($response, "Code")) {
-            $code = $response->Code;
+        if (property_exists($element, "Code")) {
+            $code = $element->Code;
         }
         return $code;
     }
