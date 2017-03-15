@@ -79,13 +79,15 @@ abstract class AbstractSaleRequest
                 $exception = null;
                 $response = json_decode($responseBody);
 
-                foreach ($response as $error) {
-                    $cieloError = new BraspagError($error->Message, $error->Code);
-                    $exception = new BraspagRequestException('Request Error', $statusCode, $exception);
-                    $exception->setBraspagError($cieloError);
+                if (is_object($response)) {
+                    $code = $this->getResponseCode($response);
+                    throw new BraspagError($response->Message, $code);
                 }
 
-                throw $exception;
+                foreach ($response as $error) {
+                    $code = $this->getResponseCode($error);
+                    throw new BraspagError($error->Message, $code);
+                }
             case 404:
                 throw new BraspagRequestException('Resource not found', 404, null);
             default:
@@ -93,5 +95,14 @@ abstract class AbstractSaleRequest
         }
 
         return $unserialized;
+    }
+
+    protected function getResponseCode($element)
+    {
+        $code = -1;
+        if (property_exists($element, "Code")) {
+            $code = $element->Code;
+        }
+        return $code;
     }
 }
