@@ -20,13 +20,9 @@ class Braspag
      * Create an instance of Braspag choosing the environment where the
      * requests will be send
      *
-     * @param
-     *            \Braspag\Merchant merchant
-     *            The merchant credentials
-     * @param
-     *            \Braspag\Environment environment
-     *            The environment: {@link Environment::production()} or
-     *            {@link Environment::sandbox()}
+     * Braspag constructor.
+     * @param Merchant $merchant
+     * @param Environment|null $environment
      */
     public function __construct(Merchant $merchant, Environment $environment = null)
     {
@@ -55,10 +51,8 @@ class Braspag
     /**
      * Query a Sale on Braspag by paymentId
      *
-     * @param string $paymentId
-     *            The paymentId to be queried
-     * @return \Braspag\Api\Sale The Sale with authorization, tid, etc. returned by Braspag.
-     * @throws BraspagRequestException if anything gets wrong.
+     * @param $paymentId
+     * @return Sale
      */
     public function getSale($paymentId)
     {
@@ -87,16 +81,10 @@ class Braspag
      * Capture a Sale on Braspag by paymentId and specifying the amount and the
      * serviceTaxAmount
      *
-     * @param string $paymentId
-     *            The paymentId to be captured
-     * @param integer $amount
-     *            Amount of the authorization to be captured
-     * @param integer $serviceTaxAmount
-     *            Amount of the authorization should be destined for the service
-     *            charge
-     * @return \Braspag\Api\Payment The captured Payment.
-     *
-     * @throws BraspagRequestException if anything gets wrong.
+     * @param $paymentId
+     * @param null $amount
+     * @param null $serviceTaxAmount
+     * @return null
      */
     public function captureSale($paymentId, $amount = null, $serviceTaxAmount = null)
     {

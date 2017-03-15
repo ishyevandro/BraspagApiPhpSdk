@@ -57,7 +57,7 @@ class CancelationTest extends TestBase
         $sale = $this->getSale();
         $result = $client->createSale($sale);
         $client->cancelSale($result->getPayment()->getPaymentId());
-        $this->assertEquals("true", $client->cancelSale($result->getPayment()->getPaymentId()));
+        $client->cancelSale($result->getPayment()->getPaymentId());
     }
 
     public function testCancelationInNotAuthorizedPaymentPaymentShouldThrowException()
