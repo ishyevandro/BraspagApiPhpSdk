@@ -47,4 +47,28 @@ class CancelationTest extends TestBase
         $this->assertEquals(BraspagNonOfficial\Api\Payment::class, get_class($cancelationResult));
         $this->assertEquals(self::STATUS_VOIDED, $cancelationResult->getStatus());
     }
+
+    public function testCancelationInCanceledPaymentShouldThrowException()
+    {
+        $this->expectException(BraspagNonOfficial\Api\Request\BraspagError::class);
+        $this->expectExceptionMessage("Transaction not available to void");
+        $this->expectExceptionCode("309");
+        $client = $this->getClient();
+        $sale = $this->getSale();
+        $result = $client->createSale($sale);
+        $client->cancelSale($result->getPayment()->getPaymentId());
+        $this->assertEquals("true", $client->cancelSale($result->getPayment()->getPaymentId()));
+    }
+
+    public function testCancelationInNotAuthorizedPaymentPaymentShouldThrowException()
+    {
+        $this->expectException(BraspagNonOfficial\Api\Request\BraspagError::class);
+        $this->expectExceptionMessage("Transaction not available to void");
+        $this->expectExceptionCode("309");
+        $client = $this->getClient();
+        $sale = $this->getSale("0000000000000002");
+        $result = $client->createSale($sale);
+        $client->cancelSale($result->getPayment()->getPaymentId());
+        $this->assertEquals("true", $client->cancelSale($result->getPayment()->getPaymentId()));
+    }
 }

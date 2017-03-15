@@ -48,7 +48,10 @@ class TestBase extends PHPUnit_Framework_TestCase
 
     protected function getClient()
     {
-        $merchant = new Merchant("5b634d21-9531-47c8-ab4d-6920983e5510", "RTRLVXVPLMPHDLYNJJRPNFWZPOSAAHJJUITWFGNP");
+        /**
+         * constants defined in phpunit.xml
+         */
+        $merchant = new Merchant(MERCHANT_ID, MERCHANT_KEY);
         return new Braspag($merchant, Environment::sandbox());
     }
 }
