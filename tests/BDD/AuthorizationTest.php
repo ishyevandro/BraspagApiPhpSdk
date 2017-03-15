@@ -9,6 +9,11 @@ use BraspagNonOfficial\Api\Payment;
 use BraspagNonOfficial\Api\Sale;
 use BraspagNonOfficial\Merchant;
 
+/**
+ * @todo - improve this test with every chance of exception
+ *
+ * Class AuthorizationTest
+ */
 class AuthorizationTest extends PHPUnit_Framework_TestCase
 {
 
@@ -32,7 +37,7 @@ class AuthorizationTest extends PHPUnit_Framework_TestCase
         $client->createSale($this->getSale('4242 4242 4242 4242'));
     }
 
-    public function testAuthorizationWithValidCreditCardShouldReturnSalesObject()
+    public function testAuthorizationWithInvalidExpirationDateShouldThrowException()
     {
         $this->expectException(BraspagNonOfficial\Api\Request\BraspagError::class);
         $this->expectExceptionMessage('Credit Card Expiration Date is invalid');
@@ -43,6 +48,13 @@ class AuthorizationTest extends PHPUnit_Framework_TestCase
         $creditCard = $payment->getCreditCard();
         $creditCard->setExpirationDate("08/20");
         $client->createSale($sale);
+    }
+
+    public function testAuthorizationWithValidDataShouldreturnSalesObject()
+    {
+        $client = $this->getClient();
+        $sale = $this->getSale();
+        $this->assertEquals(Sale::class, get_class($client->createSale($sale)));
     }
 
     protected function getSale($creditCardNumber = "0000000000000001")
