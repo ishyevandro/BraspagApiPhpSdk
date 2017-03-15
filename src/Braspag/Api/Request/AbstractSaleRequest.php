@@ -80,12 +80,11 @@ abstract class AbstractSaleRequest
                 $response = json_decode($responseBody);
 
                 foreach ($response as $error) {
-                    $cieloError = new BraspagError($error->Message, $error->Code);
+                    throw new BraspagError($error->Message, $error->Code);
                     $exception = new BraspagRequestException('Request Error', $statusCode, $exception);
                     $exception->setBraspagError($cieloError);
                 }
 
-                throw $exception;
             case 404:
                 throw new BraspagRequestException('Resource not found', 404, null);
             default:

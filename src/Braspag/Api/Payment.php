@@ -328,6 +328,9 @@ class Payment implements BraspagSerializable
         return $this;
     }
 
+    /**
+     * @return \BraspagNonOfficial\Api\CreditCard
+     */
     public function getCreditCard()
     {
         return $this->creditCard;

@@ -8,9 +8,9 @@
 			"name" : "João Batista Neto",
 			"email" : "neto.joaobatista@gmail.com"
 		}, {
-                        "name" : "Evandro Ishy Medeiros",
-                        "email": "ishyevandro@gmail.com"
-                }
+			"name" : "Evandro Ishy Medeiros",
+			"email": "ishyevandro@gmail.com"
+		}
 	],
 	"autoload" : {
 		"psr-4" : {
@@ -19,6 +19,9 @@
 	},
 	"require" : {
 		"php" : ">=5.6"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "5.3"
 	},
 	"type" : "library",
 	"license" : "GPL-2.0+",

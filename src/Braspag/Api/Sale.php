@@ -89,6 +89,9 @@ class Sale implements BraspagSerializable
         return $this;
     }
 
+    /**
+     * @return \BraspagNonOfficial\Api\Payment;
+     */
     public function getPayment()
     {
         return $this->payment;
