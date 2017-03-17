@@ -31,6 +31,14 @@ class Environment implements \BraspagNonOfficial\Environment
         return new Environment($api, $apiQuery);
     }
 
+    public static function homologation()
+    {
+        $api = 'https://apihomolog.braspag.com.br/';
+        $apiQuery = 'https://apiqueryhomolog.braspag.com.br/';
+
+        return new Environment($api, $apiQuery);
+    }
+
     /**
      * Gets the environment's Api URL
      *
