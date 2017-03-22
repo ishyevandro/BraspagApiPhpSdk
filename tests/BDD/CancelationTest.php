@@ -12,8 +12,6 @@ use BraspagNonOfficial\Merchant;
  */
 class CancelationTest extends TestBase
 {
-    const STATUS_VOIDED = 10;
-
     public function testCancelationWithWrongPaymentIdShouldThrowException()
     {
         $this->expectException(BraspagNonOfficial\Api\Request\BraspagRequestException::class);
@@ -45,10 +43,10 @@ class CancelationTest extends TestBase
         $result = $client->createSale($sale);
         $cancelationResult = $client->cancelSale($result->getPayment()->getPaymentId());
         $this->assertEquals(BraspagNonOfficial\Api\Payment::class, get_class($cancelationResult));
-        $this->assertEquals(self::STATUS_VOIDED, $cancelationResult->getStatus());
+        $this->assertEquals(self::VOIDED, $cancelationResult->getStatus());
     }
 
-    public function testCancelationInCanceledPaymentShouldThrowException()
+    public function testCancelationWithCanceledPaymentShouldThrowException()
     {
         $this->expectException(BraspagNonOfficial\Api\Request\BraspagError::class);
         $this->expectExceptionMessage("Transaction not available to void");
@@ -60,7 +58,7 @@ class CancelationTest extends TestBase
         $client->cancelSale($result->getPayment()->getPaymentId());
     }
 
-    public function testCancelationInNotAuthorizedPaymentPaymentShouldThrowException()
+    public function testCancelationWithNotAuthorizedPaymentShouldThrowException()
     {
         $this->expectException(BraspagNonOfficial\Api\Request\BraspagError::class);
         $this->expectExceptionMessage("Transaction not available to void");
@@ -69,6 +67,6 @@ class CancelationTest extends TestBase
         $sale = $this->getSale("0000000000000002");
         $result = $client->createSale($sale);
         $client->cancelSale($result->getPayment()->getPaymentId());
-        $this->assertEquals("true", $client->cancelSale($result->getPayment()->getPaymentId()));
+        $client->cancelSale($result->getPayment()->getPaymentId());
     }
 }

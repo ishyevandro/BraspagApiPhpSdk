@@ -46,10 +46,21 @@ class AuthorizationTest extends TestBase
         $client->createSale($sale);
     }
 
-    public function testAuthorizationWithValidDataShouldreturnSalesObject()
+    public function testAuthorizationWithValidDataShouldReturnSalesObject()
     {
         $client = $this->getClient();
         $sale = $this->getSale();
-        $this->assertEquals(Sale::class, get_class($client->createSale($sale)));
+        $response = $client->createSale($sale);
+        $this->assertEquals(Sale::class, get_class($response));
+        $this->assertEquals(self::AUTHORIZED, $response->getPayment()->getStatus());
+    }
+
+    public function testAuthorizationDeniedShouldReturnSalesObjectWithStatusCodeDenied()
+    {
+        $client = $this->getClient();
+        $sale = $this->getSale('0000000000000002');
+        $response = $client->createSale($sale);
+        $this->assertEquals(Sale::class, get_class($response));
+        $this->assertEquals(self::DENIED, $response->getPayment()->getStatus());
     }
 }

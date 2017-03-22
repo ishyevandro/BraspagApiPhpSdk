@@ -11,6 +11,17 @@ use BraspagNonOfficial\Merchant;
 
 class TestBase extends PHPUnit_Framework_TestCase
 {
+
+    CONST NOT_FINISHED = 0;
+    CONST AUTHORIZED = 1;
+    CONST PAYMENT_CONFIRMED = 2;
+    CONST DENIED = 3;
+    CONST VOIDED = 10;
+    CONST REFUNDED = 11;
+    CONST PENDING = 12;
+    CONST ABORTED = 13;
+    CONST SCHEDULED = 20;
+
     protected function getSale($creditCardNumber = "0000000000000001")
     {
         $sale = new Sale(rand(10000, 9999999999));
