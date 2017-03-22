@@ -83,7 +83,7 @@ class SimpleExampleTest extends TestBase
         $saleResult = $braspagClient->cancelSale($resultOfCreation->getPayment()->getPaymentId());
 
         /**
-         * Check if status is payment confirmed
+         * Check if status is cancelled
          */
         $this->assertEquals(self::VOIDED, $saleResult->getStatus());
     }
